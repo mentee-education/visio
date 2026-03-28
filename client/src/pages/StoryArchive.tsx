@@ -209,7 +209,9 @@ export default function StoryArchive() {
     return matchCat && matchSearch;
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitSending, setSubmitSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!submitData.filmTitle || !submitData.organization || !submitData.contactName || !submitData.contactEmail || !submitData.description) {
       toast.error("Please fill in all required fields.");
@@ -220,8 +222,37 @@ export default function StoryArchive() {
       toast.error("Please enter a valid email address.");
       return;
     }
-    setSubmitSuccess(true);
-    toast.success("Submission received! We'll review your film and be in touch within 5 business days.");
+    setSubmitSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "f642c143-997e-4d9e-9be2-7b9917152700",
+          subject: `[Visio] Film Submission from ${submitData.contactName}`,
+          "film title": submitData.filmTitle,
+          organization: submitData.organization,
+          director: submitData.director || "N/A",
+          year: submitData.year || "N/A",
+          duration: submitData.duration || "N/A",
+          description: submitData.description,
+          "vimeo/youtube link": submitData.vimeoUrl || "N/A",
+          name: submitData.contactName,
+          email: submitData.contactEmail,
+          notes: submitData.notes || "N/A",
+        }),
+      });
+      if (res.ok) {
+        setSubmitSuccess(true);
+        toast.success("Submission received! We'll review your film and be in touch within 24–48 hours.");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again or visit our contact page.");
+    } finally {
+      setSubmitSending(false);
+    }
   };
 
   return (
@@ -380,7 +411,7 @@ export default function StoryArchive() {
                   <CheckCircle size={40} className="text-[oklch(0.32_0.1_140)] mx-auto mb-4" />
                   <h3 className="font-display text-2xl font-bold text-[oklch(0.22_0.02_55)] mb-3">Submission received.</h3>
                   <p className="font-body text-[oklch(0.35_0.01_285)] mb-6">
-                    Thank you for submitting <strong>{submitData.filmTitle}</strong>. Our archive team will review your submission and contact you at <strong>{submitData.contactEmail}</strong> within 5 business days.
+                    Thank you for submitting <strong>{submitData.filmTitle}</strong>. Our archive team will review your submission and contact you at <strong>{submitData.contactEmail}</strong> within 24–48 hours.
                   </p>
                   <button
                     onClick={() => { setSubmitSuccess(false); setShowSubmitForm(false); setSubmitData({ filmTitle: "", organization: "", director: "", year: "", duration: "", description: "", contactName: "", contactEmail: "", vimeoUrl: "", notes: "" }); }}
@@ -526,9 +557,10 @@ export default function StoryArchive() {
                   <div className="flex gap-4">
                     <button
                       type="submit"
-                      className="flex-1 bg-[oklch(0.48_0.17_35)] text-white py-4 font-ui font-medium hover:bg-[oklch(0.42_0.17_35)] transition-colors"
+                      disabled={submitSending}
+                      className="flex-1 bg-[oklch(0.48_0.17_35)] text-white py-4 font-ui font-medium hover:bg-[oklch(0.42_0.17_35)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Submit Film for Review
+                      {submitSending ? "Sending..." : "Submit Film for Review"}
                     </button>
                     <button
                       type="button"

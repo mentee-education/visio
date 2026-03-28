@@ -13,7 +13,7 @@ export default function Footer() {
   const [newsletterSuccess, setNewsletterSuccess] = useState(false);
   const [newsletterLoading, setNewsletterLoading] = useState(false);
 
-  const handleNewsletter = (e: React.FormEvent) => {
+  const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!newsletterEmail || !emailRegex.test(newsletterEmail)) {
@@ -21,11 +21,28 @@ export default function Footer() {
       return;
     }
     setNewsletterLoading(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "f642c143-997e-4d9e-9be2-7b9917152700",
+          subject: "[Visio] Newsletter Signup",
+          email: newsletterEmail,
+          message: "New newsletter signup request",
+        }),
+      });
+      if (res.ok) {
+        setNewsletterSuccess(true);
+        toast.success("You're subscribed! Welcome to the Visio community.");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
       setNewsletterLoading(false);
-      setNewsletterSuccess(true);
-      toast.success("You're subscribed! Welcome to the Visio community.");
-    }, 800);
+    }
   };
 
   return (

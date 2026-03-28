@@ -99,7 +99,9 @@ export default function GetInvolved() {
     community: "",
   });
 
-  const handleSupportSubmit = (e: React.FormEvent) => {
+  const [supportSending, setSupportSending] = useState(false);
+
+  const handleSupportSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!supportData.name || !supportData.email || !supportData.type) {
       toast.error("Please fill in your name, email, and how you'd like to support.");
@@ -110,10 +112,36 @@ export default function GetInvolved() {
       toast.error("Please enter a valid email address.");
       return;
     }
-    setSupportSuccess(true);
+    setSupportSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "f642c143-997e-4d9e-9be2-7b9917152700",
+          subject: `[Visio] Support Interest from ${supportData.name}`,
+          name: supportData.name,
+          email: supportData.email,
+          organization: supportData.org || "N/A",
+          "support type": supportData.type,
+          message: supportData.message || "N/A",
+        }),
+      });
+      if (res.ok) {
+        setSupportSuccess(true);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again or visit our contact page.");
+    } finally {
+      setSupportSending(false);
+    }
   };
 
-  const handleVolunteerSubmit = (e: React.FormEvent) => {
+  const [volunteerSending, setVolunteerSending] = useState(false);
+
+  const handleVolunteerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!volunteerData.name || !volunteerData.email || !volunteerData.role || !volunteerData.experience) {
       toast.error("Please fill in all required fields.");
@@ -124,7 +152,33 @@ export default function GetInvolved() {
       toast.error("Please enter a valid email address.");
       return;
     }
-    setVolunteerSuccess(true);
+    setVolunteerSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "f642c143-997e-4d9e-9be2-7b9917152700",
+          subject: `[Visio] Volunteer Application from ${volunteerData.name}`,
+          name: volunteerData.name,
+          email: volunteerData.email,
+          phone: volunteerData.phone || "N/A",
+          "community/nation": volunteerData.community || "N/A",
+          "role of interest": volunteerData.role,
+          experience: volunteerData.experience,
+          availability: volunteerData.availability || "N/A",
+        }),
+      });
+      if (res.ok) {
+        setVolunteerSuccess(true);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again or visit our contact page.");
+    } finally {
+      setVolunteerSending(false);
+    }
   };
 
   return (
@@ -223,7 +277,7 @@ export default function GetInvolved() {
                     Thank you, {supportData.name}.
                   </h3>
                   <p className="font-body text-[oklch(0.40_0.01_60)] mb-6">
-                    We've received your expression of interest and will follow up at <strong>{supportData.email}</strong> within 3 business days to discuss next steps.
+                    We've received your expression of interest and will follow up at <strong>{supportData.email}</strong> within 24–48 hours to discuss next steps.
                   </p>
                   <button
                     onClick={() => { setSupportSuccess(false); setSupportData({ name: "", email: "", org: "", type: "", message: "" }); }}
@@ -313,9 +367,10 @@ export default function GetInvolved() {
 
                   <button
                     type="submit"
-                    className="w-full bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium text-base hover:bg-[oklch(0.46_0.18_30)] transition-colors flex items-center justify-center gap-2"
+                    disabled={supportSending}
+                    className="w-full bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium text-base hover:bg-[oklch(0.46_0.18_30)] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send My Expression of Interest <Mail size={15} />
+                    {supportSending ? "Sending..." : "Send My Expression of Interest"} <Mail size={15} />
                   </button>
 
                   <p className="font-body text-xs text-[oklch(0.50_0.01_60)] text-center">
@@ -382,7 +437,7 @@ export default function GetInvolved() {
                 <CheckCircle size={40} className="text-[oklch(0.24_0.015_60)] mx-auto mb-4" />
                 <h3 className="font-display text-2xl font-bold text-[oklch(0.24_0.015_60)] mb-3">Application received.</h3>
                 <p className="font-body text-[oklch(0.40_0.01_60)] mb-6">
-                  Thank you, <strong>{volunteerData.name}</strong>. We'll review your application and reach out to <strong>{volunteerData.email}</strong> within 5 business days.
+                  Thank you, <strong>{volunteerData.name}</strong>. We'll review your application and reach out to <strong>{volunteerData.email}</strong> within 24–48 hours.
                 </p>
                 <button
                   onClick={() => { setVolunteerSuccess(false); setShowVolunteerForm(false); setVolunteerData({ name: "", email: "", phone: "", role: "", experience: "", availability: "", community: "" }); }}
@@ -491,9 +546,10 @@ export default function GetInvolved() {
                 <div className="flex gap-4">
                   <button
                     type="submit"
-                    className="flex-1 bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-colors"
+                    disabled={volunteerSending}
+                    className="flex-1 bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Submit Application
+                    {volunteerSending ? "Sending..." : "Submit Application"}
                   </button>
                   <button
                     type="button"

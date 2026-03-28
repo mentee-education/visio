@@ -72,7 +72,7 @@ export default function Contact() {
       });
       if (res.ok) {
         setSubmitted(true);
-        toast.success("Message sent! We'll be in touch within 3–5 business days.");
+        toast.success("Message sent! We'll be in touch within 24–48 hours.");
       } else {
         toast.error("Something went wrong. Please try again.");
       }
@@ -122,7 +122,7 @@ export default function Contact() {
                 <div className="space-y-8">
                   <div>
                     <p className="font-body text-sm text-[oklch(0.50_0.01_60)] leading-relaxed mb-6">
-                      We're a small team — the best way to reach us is by email. We respond to all inquiries within 3–5 business days.
+                      We're a small team — the best way to reach us is by email. We respond to all inquiries within 24–48 hours.
                     </p>
                   </div>
                   <div>
@@ -144,7 +144,7 @@ export default function Contact() {
                     </div>
                     <div className="pl-7 font-body text-[oklch(0.40_0.01_60)]">
                       <p>Monday – Friday: 9am – 5pm PST</p>
-                      <p className="text-sm text-[oklch(0.50_0.01_60)] mt-1">Response time: 3–5 business days</p>
+                      <p className="text-sm text-[oklch(0.50_0.01_60)] mt-1">Response time: 24–48 hours</p>
                     </div>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export default function Contact() {
                 <div className="mt-10 p-6 bg-[oklch(0.94_0.008_90)] border-l-4 border-[oklch(0.52_0.18_30)]">
                   <h4 className="font-body text-xs uppercase tracking-wider text-[oklch(0.52_0.18_30)] mb-2">Grant Applications</h4>
                   <p className="font-body text-sm text-[oklch(0.40_0.01_60)]">
-                    Grant applications are acknowledged within 5 business days of submission. Use the contact form above for eligibility questions before applying.
+                    Grant applications are acknowledged within 24–48 hours of submission. Use the contact form above for eligibility questions before applying.
                   </p>
                 </div>
               </FadeUp>
@@ -168,7 +168,7 @@ export default function Contact() {
                       Message received.
                     </h3>
                     <p className="font-body text-lg text-[oklch(0.40_0.01_60)] mb-8">
-                      Thank you for reaching out. We'll get back to you within 3–5 business days.
+                      Thank you for reaching out. We'll get back to you within 24–48 hours.
                     </p>
                     <button
                       onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", organization: "", nation: "", inquiryType: "", message: "" }); }}

@@ -185,7 +185,9 @@ export default function Events() {
     (e) => activeFilter === "All" || e.type === activeFilter
   );
 
-  const handleRegSubmit = (e: React.FormEvent) => {
+  const [regSending, setRegSending] = useState(false);
+
+  const handleRegSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!regData.name || !regData.email) {
       toast.error("Please provide your name and email address.");
@@ -196,8 +198,34 @@ export default function Events() {
       toast.error("Please enter a valid email address.");
       return;
     }
-    setRegSuccess(true);
-    toast.success(`You're registered for ${registeringEvent?.title}!`);
+    setRegSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "f642c143-997e-4d9e-9be2-7b9917152700",
+          subject: `[Visio] Event Registration from ${regData.name}`,
+          name: regData.name,
+          email: regData.email,
+          phone: regData.phone || "N/A",
+          organization: regData.organization || "N/A",
+          "notes/accessibility": regData.notes || "N/A",
+          "event": registeringEvent?.title || "Unknown",
+          "event date": registeringEvent ? `${registeringEvent.date.month} ${registeringEvent.date.day}, ${registeringEvent.date.year}` : "N/A",
+        }),
+      });
+      if (res.ok) {
+        setRegSuccess(true);
+        toast.success(`You're registered for ${registeringEvent?.title}!`);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again or visit our contact page.");
+    } finally {
+      setRegSending(false);
+    }
   };
 
   const closeModal = () => {
@@ -595,9 +623,10 @@ export default function Events() {
                       </div>
                       <button
                         type="submit"
-                        className="w-full bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-colors"
+                        disabled={regSending}
+                        className="w-full bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                       >
-                        Confirm Registration
+                        {regSending ? "Sending..." : "Confirm Registration"}
                       </button>
                     </form>
                   </>
