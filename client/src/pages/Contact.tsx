@@ -46,15 +46,40 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields.");
       return;
     }
-    setSubmitted(true);
-    toast.success("Message sent! We'll be in touch within 3–5 business days.");
+    setSending(true);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info@civicfirm.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `[Visio] ${formData.inquiryType || "General Inquiry"} from ${formData.name}`,
+          name: formData.name,
+          email: formData.email,
+          organization: formData.organization || "N/A",
+          "nation/community": formData.nation || "N/A",
+          "inquiry type": formData.inquiryType || "N/A",
+          message: formData.message,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        toast.success("Message sent! We'll be in touch within 3–5 business days.");
+      } else {
+        toast.error("Something went wrong. Please try again or email us directly.");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -242,9 +267,10 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-3 bg-[oklch(0.52_0.18_30)] text-white px-8 py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-all hover:gap-4"
+                      disabled={sending}
+                      className="inline-flex items-center gap-3 bg-[oklch(0.52_0.18_30)] text-white px-8 py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-all hover:gap-4 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Send Message <Send size={16} />
+                      {sending ? "Sending..." : "Send Message"} <Send size={16} />
                     </button>
                   </form>
                 )}
