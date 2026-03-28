@@ -74,7 +74,7 @@ export default function Contact() {
         setSubmitted(true);
         toast.success("Message sent! We'll be in touch within 3–5 business days.");
       } else {
-        toast.error("Something went wrong. Please try again or email us directly.");
+        toast.error("Something went wrong. Please try again.");
       }
     } catch {
       toast.error("Something went wrong. Please try again or email us directly.");
@@ -128,16 +128,12 @@ export default function Contact() {
                   <div>
                     <div className="flex items-center gap-3 mb-2">
                       <Mail size={16} className="text-[oklch(0.52_0.18_30)]" />
-                      <span className="font-body text-xs uppercase tracking-wider text-[oklch(0.52_0.18_30)]">Email</span>
+                      <span className="font-body text-xs uppercase tracking-wider text-[oklch(0.52_0.18_30)]">Contact</span>
                     </div>
-                    <div className="pl-7 space-y-1">
-                      <a href="mailto:hello@visiolab.ca" className="block font-body text-[oklch(0.40_0.01_60)] hover:text-[oklch(0.52_0.18_30)] transition-colors">
-                        hello@visiolab.ca
-                      </a>
-                      <a href="mailto:grants@visiolab.ca" className="block font-body text-sm text-[oklch(0.50_0.01_60)] hover:text-[oklch(0.52_0.18_30)] transition-colors">
-                        grants@visiolab.ca (Grant inquiries)
-                      </a>
-
+                    <div className="pl-7">
+                      <p className="font-body text-[oklch(0.40_0.01_60)]">
+                        Use the form on this page to reach us, including grant inquiries.
+                      </p>
                     </div>
                   </div>
 
@@ -156,7 +152,7 @@ export default function Contact() {
                 <div className="mt-10 p-6 bg-[oklch(0.94_0.008_90)] border-l-4 border-[oklch(0.52_0.18_30)]">
                   <h4 className="font-body text-xs uppercase tracking-wider text-[oklch(0.52_0.18_30)] mb-2">Grant Applications</h4>
                   <p className="font-body text-sm text-[oklch(0.40_0.01_60)]">
-                    Grant applications are acknowledged within 5 business days of submission. Email <a href="mailto:grants@visiolab.ca" className="text-[oklch(0.52_0.18_30)] hover:underline">grants@visiolab.ca</a> for eligibility questions before applying.
+                    Grant applications are acknowledged within 5 business days of submission. Use the contact form above for eligibility questions before applying.
                   </p>
                 </div>
               </FadeUp>

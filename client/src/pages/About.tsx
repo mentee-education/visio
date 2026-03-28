@@ -172,8 +172,8 @@ export default function About() {
               Visio is a community-rooted organization led by filmmakers, educators, and advocates who believe in the power of storytelling. We are actively recruiting for the following roles.
             </p>
             <p className="font-body text-base text-[oklch(0.50_0.01_60)] max-w-2xl mb-16">
-              We prioritize candidates from Indigenous and underrepresented communities. If you're passionate about community media, reach out at{" "}
-              <a href="mailto:hello@visiolab.ca" className="text-[oklch(0.52_0.18_30)] hover:underline">hello@visiolab.ca</a>.
+              We prioritize candidates from Indigenous and underrepresented communities. If you're passionate about community media,{" "}
+              <Link href="/contact" className="text-[oklch(0.52_0.18_30)] hover:underline">reach out through our contact page</Link>.
             </p>
           </FadeUp>
 
@@ -183,12 +183,12 @@ export default function About() {
                 <div className="bg-[oklch(0.975_0.005_90)] border border-[oklch(0.90_0.008_80)] p-8 hover:border-[oklch(0.52_0.18_30/0.4)] transition-colors">
                   <div className="font-body text-[10px] uppercase tracking-[0.2em] text-[oklch(0.52_0.18_30)] mb-3">{item.type}</div>
                   <h3 className="font-display text-xl font-bold text-[oklch(0.24_0.015_60)] mb-4">{item.role}</h3>
-                  <a
-                    href="mailto:hello@visiolab.ca"
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 font-body text-xs font-medium text-[oklch(0.52_0.18_30)] border-b border-[oklch(0.52_0.18_30)] pb-0.5 hover:gap-3 transition-all"
                   >
                     Express Interest <ArrowRight size={11} />
-                  </a>
+                  </Link>
                 </div>
               </FadeUp>
             ))}
@@ -210,8 +210,8 @@ export default function About() {
                 Visio is funded through a combination of individual donations, community fundraising, and applications to public arts and media funds. We do not accept funding that compromises our editorial independence or community ownership principles.
               </p>
               <p className="font-body text-base text-[oklch(0.50_0.01_60)] leading-relaxed">
-                Interested in supporting our work through a grant, sponsorship, or partnership? Contact us at{" "}
-                <a href="mailto:hello@visiolab.ca" className="text-[oklch(0.52_0.18_30)] hover:underline">hello@visiolab.ca</a>.
+                Interested in supporting our work through a grant, sponsorship, or partnership?{" "}
+                <Link href="/contact" className="text-[oklch(0.52_0.18_30)] hover:underline">Contact us</Link>.
               </p>
             </div>
           </FadeUp>

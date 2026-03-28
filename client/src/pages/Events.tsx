@@ -80,7 +80,7 @@ const upcomingEvents: Event[] = [
     location: "Online Submission",
     time: "11:59 PM PST",
     desc: "Applications for the Spring 2026 Community Video Grant cycle close. Seed, Community, and Impact grant tiers available.",
-    fullDesc: "The Spring 2026 grant cycle closes at 11:59 PM PST on May 3rd. Three grant tiers are available: Seed ($2,500), Community ($8,000), and Impact ($18,000). Applications are submitted through our online portal. Late applications will not be accepted. Contact grants@visiolab.ca with any questions before the deadline.",
+    fullDesc: "The Spring 2026 grant cycle closes at 11:59 PM PST on May 3rd. Three grant tiers are available: Seed ($2,500), Community ($8,000), and Impact ($18,000). Applications are submitted through our online portal. Late applications will not be accepted. Contact us through the contact page with any questions before the deadline.",
     featured: false,
     cost: "N/A",
     registration: false,
@@ -287,7 +287,7 @@ export default function Events() {
                       </button>
                     ) : (
                       <a
-                        href="mailto:hello@visiolab.ca"
+                        href="/contact"
                         className="inline-flex items-center gap-2 border border-[oklch(0.52_0.18_30)] text-[oklch(0.52_0.18_30)] px-6 py-3 font-body text-sm font-medium hover:bg-[oklch(0.52_0.18_30)] hover:text-white transition-all"
                       >
                         Contact for Details <ArrowRight size={14} />
@@ -385,7 +385,7 @@ export default function Events() {
                         </button>
                       ) : (
                         <a
-                          href="mailto:grants@visiolab.ca"
+                          href="/contact"
                           className="inline-flex items-center gap-2 border border-[oklch(0.52_0.18_30)] text-[oklch(0.52_0.18_30)] px-5 py-2.5 font-body text-xs font-medium hover:bg-[oklch(0.52_0.18_30)] hover:text-white transition-all whitespace-nowrap"
                         >
                           Learn More <ArrowRight size={12} />
@@ -432,10 +432,10 @@ export default function Events() {
                 <p className="font-body text-[oklch(0.50_0.01_60)]">Subscribe to our newsletter for event announcements, grant deadlines, and community stories.</p>
               </div>
               <a
-                href="mailto:hello@visiolab.ca?subject=Newsletter Signup&body=Please add me to the Visio newsletter."
+                href="/contact"
                 className="flex-shrink-0 inline-flex items-center gap-2 bg-[oklch(0.52_0.18_30)] text-white px-7 py-3.5 font-body font-medium text-sm hover:bg-[oklch(0.46_0.18_30)] transition-all hover:gap-3"
               >
-                Subscribe to Newsletter <ArrowRight size={15} />
+                Contact Us <ArrowRight size={15} />
               </a>
             </div>
           </FadeUp>

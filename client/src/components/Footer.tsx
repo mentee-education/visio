@@ -105,9 +105,9 @@ export default function Footer() {
             <h4 className="font-body text-[10px] uppercase tracking-[0.2em] text-[oklch(0.52_0.18_30)] mb-5">Stay Connected</h4>
             <div className="flex items-center gap-3 mb-6">
               <Mail size={14} className="text-[oklch(0.52_0.18_30)] flex-shrink-0" />
-              <a href="mailto:hello@visiolab.ca" className="font-body text-sm text-white/45 hover:text-white transition-colors">
-                hello@visiolab.ca
-              </a>
+              <Link href="/contact" className="font-body text-sm text-white/45 hover:text-white transition-colors">
+                Contact Us
+              </Link>
             </div>
 
             {newsletterSuccess ? (

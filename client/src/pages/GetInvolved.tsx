@@ -319,8 +319,8 @@ export default function GetInvolved() {
                   </button>
 
                   <p className="font-body text-xs text-[oklch(0.50_0.01_60)] text-center">
-                    Prefer to reach out directly? Email{" "}
-                    <a href="mailto:hello@visiolab.ca" className="text-[oklch(0.52_0.18_30)] hover:underline">hello@visiolab.ca</a>
+                    Prefer to reach out directly?{" "}
+                    <Link href="/contact" className="text-[oklch(0.52_0.18_30)] hover:underline">Visit our contact page</Link>
                   </p>
                 </form>
               )}
@@ -548,7 +548,7 @@ export default function GetInvolved() {
                   Discuss a Partnership <ArrowRight size={15} />
                 </Link>
                 <p className="font-body text-xs text-white/40 mt-4">
-                  Or email us directly at <a href="mailto:partnerships@visiolab.ca" className="text-white/60 hover:text-white transition-colors">partnerships@visiolab.ca</a>
+                  Or reach out through our <Link href="/contact" className="text-white/60 hover:text-white transition-colors">contact page</Link>
                 </p>
               </div>
             </FadeUp>

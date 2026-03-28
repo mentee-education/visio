@@ -482,7 +482,7 @@ export default function StoryArchive() {
                       placeholder="https://vimeo.com/your-film"
                       className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
                     />
-                    <p className="font-ui text-xs text-[oklch(0.55_0.015_285)] mt-1">You can also email a screener link to archive@visiolab.ca</p>
+                    <p className="font-ui text-xs text-[oklch(0.55_0.015_285)] mt-1">You can also submit a screener link through our <a href="/contact" className="text-[oklch(0.48_0.17_35)] hover:underline">contact page</a></p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -621,7 +621,7 @@ export default function StoryArchive() {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href={`mailto:archive@visiolab.ca?subject=Screening Request: ${selectedFilm.title}`}
+                    href="/contact"
                     className="flex-1 inline-flex items-center justify-center gap-2 bg-[oklch(0.48_0.17_35)] text-white px-6 py-3.5 font-ui font-medium text-sm hover:bg-[oklch(0.42_0.17_35)] transition-all"
                   >
                     <Play size={14} fill="currentColor" /> Request Screening Access
