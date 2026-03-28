@@ -56,11 +56,12 @@ export default function Contact() {
     }
     setSending(true);
     try {
-      const res = await fetch("https://formsubmit.co/ajax/info@civicfirm.com", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          _subject: `[Visio] ${formData.inquiryType || "General Inquiry"} from ${formData.name}`,
+          access_key: "f642c143-997e-4d9e-9be2-7b9917152700",
+          subject: `[Visio] ${formData.inquiryType || "General Inquiry"} from ${formData.name}`,
           name: formData.name,
           email: formData.email,
           organization: formData.organization || "N/A",
