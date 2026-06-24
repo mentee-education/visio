@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-6">
-              <img src="/favicon.svg" alt="" className="w-7 h-7 flex-shrink-0" />
+              <img src="/visio-mark.png" alt="" className="w-8 h-8 flex-shrink-0 object-contain" />
               <span className="font-display font-bold text-lg text-white">Visio</span>
             </div>
             <p className="font-body text-sm leading-relaxed text-white/50 mb-6">

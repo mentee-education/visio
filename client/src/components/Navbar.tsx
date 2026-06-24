@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo — wordmark only, clean */}
             <Link href="/" className="flex items-center gap-2.5 group">
-              <img src="/favicon.svg" alt="" className="w-7 h-7 flex-shrink-0" />
+              <img src="/visio-mark.png" alt="" className="w-8 h-8 flex-shrink-0 object-contain" />
               <div className="leading-none">
                 <span
                   className={`font-display font-bold text-lg tracking-tight transition-colors block ${
