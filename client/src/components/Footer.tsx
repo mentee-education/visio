@@ -52,9 +52,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-6">
-              <div className="w-7 h-7 rounded-full bg-[oklch(0.52_0.18_30)] flex items-center justify-center flex-shrink-0">
-                <div className="w-2.5 h-2.5 rounded-full border-[1.5px] border-white" />
-              </div>
+              <img src="/favicon.svg" alt="" className="w-7 h-7 flex-shrink-0" />
               <span className="font-display font-bold text-lg text-white">Visio</span>
             </div>
             <p className="font-body text-sm leading-relaxed text-white/50 mb-6">
@@ -104,7 +102,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/about", label: "About Visio" },
-                { href: "/events", label: "Events" },
+                { href: "/archive", label: "Story Archive" },
                 { href: "/get-involved", label: "Get Involved" },
                 { href: "/contact", label: "Contact" },
               ].map((item) => (

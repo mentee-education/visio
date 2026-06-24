@@ -159,21 +159,21 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team / Hiring */}
+      {/* Team */}
       <section id="team" className="py-20 md:py-28">
         <div className="container">
           <FadeUp>
             <span className="section-label mb-4 block">The People</span>
             <div className="rule-terracotta" />
             <h2 className="font-display text-4xl md:text-5xl font-bold text-[oklch(0.24_0.015_60)] mb-4">
-              We're building our team.
+              A team rooted in community.
             </h2>
             <p className="font-body text-lg text-[oklch(0.50_0.01_60)] max-w-2xl mb-6">
-              Visio is a community-rooted organization led by filmmakers, educators, and advocates who believe in the power of storytelling. We are actively recruiting for the following roles.
+              Visio is led by filmmakers, educators, and advocates who believe in the power of storytelling. As we grow, we're building a team that reflects the communities we serve.
             </p>
             <p className="font-body text-base text-[oklch(0.50_0.01_60)] max-w-2xl mb-16">
-              We prioritize candidates from Indigenous and underrepresented communities. If you're passionate about community media,{" "}
-              <Link href="/contact" className="text-[oklch(0.52_0.18_30)] hover:underline">reach out through our contact page</Link>.
+              We prioritize people from Indigenous and underrepresented communities. If you're passionate about community media and want to be part of what we're building,{" "}
+              <Link href="/contact" className="text-[oklch(0.52_0.18_30)] hover:underline">we'd love to hear from you</Link>.
             </p>
           </FadeUp>
 

@@ -1,7 +1,7 @@
 /*
  * VISIO Story Archive Page
- * Design: Film-grid layout, dark editorial aesthetic, terracotta accents
- * All interactions are real: film detail modal, submission form with validation
+ * Design: Film-grid layout, editorial aesthetic, terracotta accents
+ * Showcases the types of community films Visio produces
  */
 
 import { useRef, useState } from "react";
@@ -256,11 +256,11 @@ export default function StoryArchive() {
   };
 
   return (
-    <div className="min-h-screen bg-[oklch(0.95_0.025_80)]">
+    <div className="min-h-screen bg-[oklch(0.975_0.005_90)]">
       <Navbar />
 
       {/* Header */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[oklch(0.22_0.02_55)]">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[oklch(0.24_0.015_60)]">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -279,29 +279,29 @@ export default function StoryArchive() {
       </section>
 
       {/* Filter Bar */}
-      <section className="sticky top-16 md:top-20 z-30 bg-[oklch(0.97_0.018_80)] border-b border-[oklch(0.85_0.03_75)]">
+      <section className="sticky top-16 md:top-20 z-30 bg-[oklch(0.975_0.005_90)] border-b border-[oklch(0.90_0.008_80)]">
         <div className="container py-4">
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <div className="relative flex-1 max-w-sm">
-              <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-[oklch(0.55_0.015_285)]" />
+              <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-[oklch(0.50_0.01_60)]" />
               <input
                 type="text"
                 placeholder="Search by title, org, or community..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2.5 bg-transparent border border-[oklch(0.85_0.03_75)] font-ui text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                className="w-full pl-9 pr-4 py-2.5 bg-transparent border border-[oklch(0.90_0.008_80)] font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
               />
             </div>
             <div className="flex items-center gap-2 flex-wrap">
-              <Filter size={14} className="text-[oklch(0.55_0.015_285)]" />
+              <Filter size={14} className="text-[oklch(0.50_0.01_60)]" />
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`font-ui text-xs px-3 py-1.5 transition-all ${
+                  className={`font-body text-xs px-3 py-1.5 transition-all ${
                     activeCategory === cat
-                      ? "bg-[oklch(0.48_0.17_35)] text-white"
-                      : "border border-[oklch(0.85_0.03_75)] text-[oklch(0.45_0.015_285)] hover:border-[oklch(0.48_0.17_35)] hover:text-[oklch(0.48_0.17_35)]"
+                      ? "bg-[oklch(0.52_0.18_30)] text-white"
+                      : "border border-[oklch(0.90_0.008_80)] text-[oklch(0.40_0.01_60)] hover:border-[oklch(0.52_0.18_30)] hover:text-[oklch(0.52_0.18_30)]"
                   }`}
                 >
                   {cat}
@@ -316,17 +316,17 @@ export default function StoryArchive() {
       <section className="py-16 md:py-20">
         <div className="container">
           <div className="mb-6">
-            <span className="font-ui text-sm text-[oklch(0.55_0.015_285)]">
+            <span className="font-body text-sm text-[oklch(0.50_0.01_60)]">
               {filtered.length} film{filtered.length !== 1 ? "s" : ""} found
             </span>
           </div>
 
           {filtered.length === 0 ? (
             <div className="text-center py-20">
-              <p className="font-display text-2xl text-[oklch(0.45_0.015_285)]">No films match your search.</p>
+              <p className="font-display text-2xl text-[oklch(0.40_0.01_60)]">No films match your search.</p>
               <button
                 onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
-                className="mt-4 font-ui text-sm text-[oklch(0.48_0.17_35)] underline"
+                className="mt-4 font-body text-sm text-[oklch(0.52_0.18_30)] underline"
               >
                 Clear filters
               </button>
@@ -345,35 +345,35 @@ export default function StoryArchive() {
                         alt={film.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-[oklch(0.20_0.04_55/0.45)] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <div className="w-14 h-14 rounded-full bg-[oklch(0.48_0.17_35)] flex items-center justify-center">
+                      <div className="absolute inset-0 bg-[oklch(0.24_0.015_60/0.45)] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-full bg-[oklch(0.52_0.18_30)] flex items-center justify-center">
                           <Play size={20} fill="white" className="text-white ml-1" />
                         </div>
                       </div>
                       <div className="absolute top-3 left-3">
-                        <span className="font-ui text-[10px] uppercase tracking-wider bg-[oklch(0.48_0.17_35)] text-white px-2.5 py-1">
+                        <span className="font-body text-[10px] uppercase tracking-wider bg-[oklch(0.52_0.18_30)] text-white px-2.5 py-1">
                           {film.tag}
                         </span>
                       </div>
                       <div className="absolute bottom-3 right-3">
-                        <span className="font-ui text-[10px] bg-[oklch(0.20_0.04_55/0.8)] text-white px-2 py-1">
+                        <span className="font-body text-[10px] bg-[oklch(0.24_0.015_60/0.8)] text-white px-2 py-1">
                           {film.duration}
                         </span>
                       </div>
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="font-ui text-xs text-[oklch(0.48_0.17_35)]">{film.org}</span>
-                        <span className="text-[oklch(0.75_0.015_80)]">·</span>
-                        <span className="font-ui text-xs text-[oklch(0.55_0.015_285)]">{film.year}</span>
+                        <span className="font-body text-xs text-[oklch(0.52_0.18_30)]">{film.org}</span>
+                        <span className="text-[oklch(0.80_0.01_60)]">&middot;</span>
+                        <span className="font-body text-xs text-[oklch(0.50_0.01_60)]">{film.year}</span>
                       </div>
-                      <h3 className="font-display text-xl font-bold text-[oklch(0.22_0.02_55)] group-hover:text-[oklch(0.48_0.17_35)] transition-colors mb-2">
+                      <h3 className="font-display text-xl font-bold text-[oklch(0.24_0.015_60)] group-hover:text-[oklch(0.52_0.18_30)] transition-colors mb-2">
                         {film.title}
                       </h3>
-                      <p className="font-body text-sm text-[oklch(0.45_0.015_285)] leading-relaxed line-clamp-2">
+                      <p className="font-body text-sm text-[oklch(0.50_0.01_60)] leading-relaxed line-clamp-2">
                         {film.desc}
                       </p>
-                      <button className="mt-3 font-ui text-xs text-[oklch(0.48_0.17_35)] flex items-center gap-1 hover:gap-2 transition-all">
+                      <button className="mt-3 font-body text-xs text-[oklch(0.52_0.18_30)] flex items-center gap-1 hover:gap-2 transition-all">
                         View details <ArrowRight size={11} />
                       </button>
                     </div>
@@ -386,124 +386,124 @@ export default function StoryArchive() {
       </section>
 
       {/* Submit Your Film */}
-      <section className="py-16 bg-[oklch(0.91_0.025_80)]">
+      <section className="py-16 bg-[oklch(0.94_0.008_90)]">
         <div className="container">
           <FadeUp>
             <div className="max-w-3xl">
               <span className="section-label mb-4 block">Submit Your Work</span>
               <div className="rule-terracotta" />
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[oklch(0.22_0.02_55)] mb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[oklch(0.24_0.015_60)] mb-4">
                 Have a community film to share?
               </h2>
-              <p className="font-body text-lg text-[oklch(0.35_0.01_285)] mb-8">
+              <p className="font-body text-lg text-[oklch(0.40_0.01_60)] mb-8">
                 If your organization has produced a film — with or without Visio's support — we welcome submissions to our archive. All community-produced content is considered.
               </p>
 
               {!showSubmitForm ? (
                 <button
                   onClick={() => setShowSubmitForm(true)}
-                  className="inline-flex items-center gap-2 bg-[oklch(0.48_0.17_35)] text-white px-7 py-3.5 font-ui font-medium text-sm hover:bg-[oklch(0.42_0.17_35)] transition-all hover:gap-3"
+                  className="inline-flex items-center gap-2 bg-[oklch(0.52_0.18_30)] text-white px-7 py-3.5 font-body font-medium text-sm hover:bg-[oklch(0.46_0.18_30)] transition-all hover:gap-3"
                 >
                   <Upload size={15} /> Submit a Film
                 </button>
               ) : submitSuccess ? (
-                <div className="bg-[oklch(0.32_0.1_140/0.08)] border border-[oklch(0.32_0.1_140/0.3)] p-10 text-center">
-                  <CheckCircle size={40} className="text-[oklch(0.32_0.1_140)] mx-auto mb-4" />
-                  <h3 className="font-display text-2xl font-bold text-[oklch(0.22_0.02_55)] mb-3">Submission received.</h3>
-                  <p className="font-body text-[oklch(0.35_0.01_285)] mb-6">
+                <div className="bg-[oklch(0.52_0.18_30/0.08)] border border-[oklch(0.52_0.18_30/0.3)] p-10 text-center">
+                  <CheckCircle size={40} className="text-[oklch(0.24_0.015_60)] mx-auto mb-4" />
+                  <h3 className="font-display text-2xl font-bold text-[oklch(0.24_0.015_60)] mb-3">Submission received.</h3>
+                  <p className="font-body text-[oklch(0.40_0.01_60)] mb-6">
                     Thank you for submitting <strong>{submitData.filmTitle}</strong>. Our archive team will review your submission and contact you at <strong>{submitData.contactEmail}</strong> within 24–48 hours.
                   </p>
                   <button
                     onClick={() => { setSubmitSuccess(false); setShowSubmitForm(false); setSubmitData({ filmTitle: "", organization: "", director: "", year: "", duration: "", description: "", contactName: "", contactEmail: "", vimeoUrl: "", notes: "" }); }}
-                    className="font-ui text-sm text-[oklch(0.48_0.17_35)] underline"
+                    className="font-body text-sm text-[oklch(0.52_0.18_30)] underline"
                   >
                     Submit another film
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="bg-[oklch(0.97_0.018_80)] border border-[oklch(0.85_0.03_75)] p-8 space-y-6">
+                <form onSubmit={handleSubmit} className="bg-[oklch(0.975_0.005_90)] border border-[oklch(0.90_0.008_80)] p-8 space-y-6">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-display text-2xl font-bold text-[oklch(0.22_0.02_55)]">Film Submission Form</h3>
-                    <button type="button" onClick={() => setShowSubmitForm(false)} className="text-[oklch(0.55_0.015_285)] hover:text-[oklch(0.22_0.02_55)]">
+                    <h3 className="font-display text-2xl font-bold text-[oklch(0.24_0.015_60)]">Film Submission Form</h3>
+                    <button type="button" onClick={() => setShowSubmitForm(false)} className="text-[oklch(0.50_0.01_60)] hover:text-[oklch(0.24_0.015_60)]">
                       <X size={20} />
                     </button>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">
-                        Film Title <span className="text-[oklch(0.48_0.17_35)]">*</span>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
+                        Film Title <span className="text-[oklch(0.52_0.18_30)]">*</span>
                       </label>
                       <input
                         type="text"
                         value={submitData.filmTitle}
                         onChange={(e) => setSubmitData({ ...submitData, filmTitle: e.target.value })}
                         placeholder="Title of your film"
-                        className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                        className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
                       />
                     </div>
                     <div>
-                      <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">
-                        Organization <span className="text-[oklch(0.48_0.17_35)]">*</span>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
+                        Organization <span className="text-[oklch(0.52_0.18_30)]">*</span>
                       </label>
                       <input
                         type="text"
                         value={submitData.organization}
                         onChange={(e) => setSubmitData({ ...submitData, organization: e.target.value })}
                         placeholder="Producing organization"
-                        className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                        className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">Director</label>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">Director</label>
                       <input
                         type="text"
                         value={submitData.director}
                         onChange={(e) => setSubmitData({ ...submitData, director: e.target.value })}
                         placeholder="Director's name"
-                        className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                        className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
                       />
                     </div>
                     <div>
-                      <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">Year</label>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">Year</label>
                       <input
                         type="text"
                         value={submitData.year}
                         onChange={(e) => setSubmitData({ ...submitData, year: e.target.value })}
                         placeholder="e.g. 2024"
-                        className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                        className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
                       />
                     </div>
                     <div>
-                      <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">Duration</label>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">Duration</label>
                       <input
                         type="text"
                         value={submitData.duration}
                         onChange={(e) => setSubmitData({ ...submitData, duration: e.target.value })}
                         placeholder="e.g. 12 min"
-                        className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                        className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">
-                      Film Description <span className="text-[oklch(0.48_0.17_35)]">*</span>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
+                      Film Description <span className="text-[oklch(0.52_0.18_30)]">*</span>
                     </label>
                     <textarea
                       value={submitData.description}
                       onChange={(e) => setSubmitData({ ...submitData, description: e.target.value })}
                       placeholder="Describe your film — its story, community, and purpose (2–4 sentences)"
                       rows={4}
-                      className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)] resize-none"
+                      className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)] resize-none"
                     />
                   </div>
 
                   <div>
-                    <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
                       Vimeo / YouTube Link
                     </label>
                     <input
@@ -511,46 +511,46 @@ export default function StoryArchive() {
                       value={submitData.vimeoUrl}
                       onChange={(e) => setSubmitData({ ...submitData, vimeoUrl: e.target.value })}
                       placeholder="https://vimeo.com/your-film"
-                      className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                      className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
                     />
-                    <p className="font-ui text-xs text-[oklch(0.55_0.015_285)] mt-1">You can also submit a screener link through our <a href="/contact" className="text-[oklch(0.48_0.17_35)] hover:underline">contact page</a></p>
+                    <p className="font-body text-xs text-[oklch(0.50_0.01_60)] mt-1">You can also submit a screener link through our <a href="/contact" className="text-[oklch(0.52_0.18_30)] hover:underline">contact page</a></p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">
-                        Your Name <span className="text-[oklch(0.48_0.17_35)]">*</span>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
+                        Your Name <span className="text-[oklch(0.52_0.18_30)]">*</span>
                       </label>
                       <input
                         type="text"
                         value={submitData.contactName}
                         onChange={(e) => setSubmitData({ ...submitData, contactName: e.target.value })}
                         placeholder="Contact person's name"
-                        className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                        className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
                       />
                     </div>
                     <div>
-                      <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">
-                        Email Address <span className="text-[oklch(0.48_0.17_35)]">*</span>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
+                        Email Address <span className="text-[oklch(0.52_0.18_30)]">*</span>
                       </label>
                       <input
                         type="email"
                         value={submitData.contactEmail}
                         onChange={(e) => setSubmitData({ ...submitData, contactEmail: e.target.value })}
                         placeholder="your@email.com"
-                        className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)]"
+                        className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="font-ui text-xs uppercase tracking-wider text-[oklch(0.55_0.015_285)] mb-2 block">Additional Notes</label>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">Additional Notes</label>
                     <textarea
                       value={submitData.notes}
                       onChange={(e) => setSubmitData({ ...submitData, notes: e.target.value })}
                       placeholder="Any additional context, community protocols, or screening restrictions we should know about"
                       rows={3}
-                      className="w-full border border-[oklch(0.85_0.03_75)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.22_0.02_55)] placeholder:text-[oklch(0.65_0.015_80)] focus:outline-none focus:border-[oklch(0.48_0.17_35)] resize-none"
+                      className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)] resize-none"
                     />
                   </div>
 
@@ -558,14 +558,14 @@ export default function StoryArchive() {
                     <button
                       type="submit"
                       disabled={submitSending}
-                      className="flex-1 bg-[oklch(0.48_0.17_35)] text-white py-4 font-ui font-medium hover:bg-[oklch(0.42_0.17_35)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="flex-1 bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {submitSending ? "Sending..." : "Submit Film for Review"}
                     </button>
                     <button
                       type="button"
                       onClick={() => setShowSubmitForm(false)}
-                      className="px-6 border border-[oklch(0.85_0.03_75)] font-ui text-sm text-[oklch(0.45_0.015_285)] hover:border-[oklch(0.48_0.17_35)] transition-colors"
+                      className="px-6 border border-[oklch(0.90_0.008_80)] font-body text-sm text-[oklch(0.40_0.01_60)] hover:border-[oklch(0.52_0.18_30)] transition-colors"
                     >
                       Cancel
                     </button>
@@ -586,7 +586,7 @@ export default function StoryArchive() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[oklch(0.20_0.04_55/0.9)] flex items-center justify-center p-4 md:p-8"
+            className="fixed inset-0 z-50 bg-[oklch(0.24_0.015_60/0.9)] flex items-center justify-center p-4 md:p-8"
             onClick={() => setSelectedFilm(null)}
           >
             <motion.div
@@ -594,79 +594,77 @@ export default function StoryArchive() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.97 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-[oklch(0.97_0.018_80)] max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-[oklch(0.975_0.005_90)] max-w-3xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Film image */}
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src={selectedFilm.img}
                   alt={selectedFilm.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.20_0.04_55/0.7)] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.24_0.015_60/0.7)] to-transparent" />
                 <div className="absolute top-3 left-3">
-                  <span className="font-ui text-[10px] uppercase tracking-wider bg-[oklch(0.48_0.17_35)] text-white px-2.5 py-1">
+                  <span className="font-body text-[10px] uppercase tracking-wider bg-[oklch(0.52_0.18_30)] text-white px-2.5 py-1">
                     {selectedFilm.tag}
                   </span>
                 </div>
                 <button
                   onClick={() => setSelectedFilm(null)}
-                  className="absolute top-3 right-3 w-9 h-9 bg-[oklch(0.20_0.04_55/0.7)] flex items-center justify-center text-white hover:bg-[oklch(0.20_0.04_55/0.9)] transition-colors"
+                  className="absolute top-3 right-3 w-9 h-9 bg-[oklch(0.24_0.015_60/0.7)] flex items-center justify-center text-white hover:bg-[oklch(0.24_0.015_60/0.9)] transition-colors"
                   aria-label="Close"
                 >
                   <X size={18} />
                 </button>
               </div>
 
-              {/* Film info */}
               <div className="p-8">
-                <div className="flex flex-wrap items-center gap-4 mb-4 text-[oklch(0.55_0.015_285)]">
-                  <span className="flex items-center gap-1.5 font-ui text-xs">
-                    <Building2 size={13} className="text-[oklch(0.48_0.17_35)]" />
+                <div className="flex flex-wrap items-center gap-4 mb-4 text-[oklch(0.50_0.01_60)]">
+                  <span className="flex items-center gap-1.5 font-body text-xs">
+                    <Building2 size={13} className="text-[oklch(0.52_0.18_30)]" />
                     {selectedFilm.org}
                   </span>
-                  <span className="flex items-center gap-1.5 font-ui text-xs">
-                    <Calendar size={13} className="text-[oklch(0.48_0.17_35)]" />
+                  <span className="flex items-center gap-1.5 font-body text-xs">
+                    <Calendar size={13} className="text-[oklch(0.52_0.18_30)]" />
                     {selectedFilm.year}
                   </span>
-                  <span className="flex items-center gap-1.5 font-ui text-xs">
-                    <Clock size={13} className="text-[oklch(0.48_0.17_35)]" />
+                  <span className="flex items-center gap-1.5 font-body text-xs">
+                    <Clock size={13} className="text-[oklch(0.52_0.18_30)]" />
                     {selectedFilm.duration}
                   </span>
                 </div>
 
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-[oklch(0.22_0.02_55)] mb-2">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-[oklch(0.24_0.015_60)] mb-2">
                   {selectedFilm.title}
                 </h2>
 
-                <div className="flex flex-wrap gap-4 mb-6 font-ui text-sm text-[oklch(0.45_0.015_285)]">
-                  <span>Directed by <strong className="text-[oklch(0.22_0.02_55)]">{selectedFilm.director}</strong></span>
+                <div className="flex flex-wrap gap-4 mb-6 font-body text-sm text-[oklch(0.40_0.01_60)]">
+                  <span>Directed by <strong className="text-[oklch(0.24_0.015_60)]">{selectedFilm.director}</strong></span>
                   {selectedFilm.language && (
-                    <span>Language: <strong className="text-[oklch(0.22_0.02_55)]">{selectedFilm.language}</strong></span>
+                    <span>Language: <strong className="text-[oklch(0.24_0.015_60)]">{selectedFilm.language}</strong></span>
                   )}
                 </div>
 
-                <p className="font-body text-base text-[oklch(0.35_0.01_285)] leading-relaxed mb-8">
+                <p className="font-body text-base text-[oklch(0.40_0.01_60)] leading-relaxed mb-8">
                   {selectedFilm.fullDesc}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="/contact"
-                    className="flex-1 inline-flex items-center justify-center gap-2 bg-[oklch(0.48_0.17_35)] text-white px-6 py-3.5 font-ui font-medium text-sm hover:bg-[oklch(0.42_0.17_35)] transition-all"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-[oklch(0.52_0.18_30)] text-white px-6 py-3.5 font-body font-medium text-sm hover:bg-[oklch(0.46_0.18_30)] transition-all"
                   >
                     <Play size={14} fill="currentColor" /> Request Screening Access
                   </a>
                   <button
                     onClick={() => setSelectedFilm(null)}
-                    className="px-6 py-3.5 border border-[oklch(0.85_0.03_75)] font-ui text-sm text-[oklch(0.45_0.015_285)] hover:border-[oklch(0.48_0.17_35)] transition-colors"
+                    className="px-6 py-3.5 border border-[oklch(0.90_0.008_80)] font-body text-sm text-[oklch(0.40_0.01_60)] hover:border-[oklch(0.52_0.18_30)] transition-colors"
                   >
                     Back to Archive
                   </button>
                 </div>
 
-                <p className="font-ui text-xs text-[oklch(0.65_0.015_80)] mt-4">
+                <p className="font-body text-xs text-[oklch(0.50_0.01_60)] mt-4">
                   Screening access is granted at the discretion of the producing community organization. All requests are forwarded directly to the community for approval.
                 </p>
               </div>

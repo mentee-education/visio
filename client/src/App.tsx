@@ -7,7 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
-import Events from "./pages/Events";
+import StoryArchive from "./pages/StoryArchive";
 import GetInvolved from "./pages/GetInvolved";
 import Contact from "./pages/Contact";
 
@@ -17,7 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/programs" component={Programs} />
-      <Route path="/events" component={Events} />
+      <Route path="/archive" component={StoryArchive} />
       <Route path="/get-involved" component={GetInvolved} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
