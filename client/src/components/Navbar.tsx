@@ -43,29 +43,13 @@ export default function Navbar() {
       >
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo — wordmark only, clean */}
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <img src="/visio-mark.png" alt="" className="w-8 h-8 flex-shrink-0 object-contain" />
-              <div className="leading-none">
-                <span
-                  className={`font-display font-bold text-lg tracking-tight transition-colors block ${
-                    scrolled || !isHome
-                      ? "text-[oklch(0.24_0.015_60)]"
-                      : "text-white"
-                  }`}
-                >
-                  Visio
-                </span>
-                <span
-                  className={`hidden sm:block font-body text-[9px] uppercase tracking-[0.25em] transition-colors mt-0.5 ${
-                    scrolled || !isHome
-                      ? "text-[oklch(0.50_0.01_60)]"
-                      : "text-white/60"
-                  }`}
-                >
-                  Community Media Lab
-                </span>
-              </div>
+            {/* Logo */}
+            <Link href="/" className="block">
+              <img
+                src={scrolled || !isHome ? "/visio-logo.png" : "/visio-logo-white.png"}
+                alt="Visio Community Media Lab"
+                className="h-10 md:h-12 w-auto object-contain transition-opacity"
+              />
             </Link>
 
             {/* Desktop Nav — uppercase, tracked */}

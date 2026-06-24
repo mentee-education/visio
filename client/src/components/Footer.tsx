@@ -51,9 +51,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-6">
-              <img src="/visio-mark.png" alt="" className="w-8 h-8 flex-shrink-0 object-contain" />
-              <span className="font-display font-bold text-lg text-white">Visio</span>
+            <div className="mb-6">
+              <img src="/visio-logo-white.png" alt="Visio Community Media Lab" className="h-10 w-auto object-contain" />
             </div>
             <p className="font-body text-sm leading-relaxed text-white/50 mb-6">
               Amplifying underrepresented voices through accessible video production, training, and storytelling support across Canada.
