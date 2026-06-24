@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <img src="/visio-logo-white.png" alt="Visio Community Media Lab" className="h-10 w-auto object-contain" />
+              <img src="/visio-logo-full-white.png" alt="Visio Community Media Lab" className="h-10 w-auto object-contain" />
             </div>
             <p className="font-body text-sm leading-relaxed text-white/50 mb-6">
               Amplifying underrepresented voices through accessible video production, training, and storytelling support across Canada.

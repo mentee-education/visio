@@ -46,7 +46,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="block">
               <img
-                src={scrolled || !isHome ? "/visio-logo.png" : "/visio-logo-white.png"}
+                src={scrolled || !isHome ? "/visio-logo-full.png" : "/visio-logo-full-white.png"}
                 alt="Visio Community Media Lab"
                 className="h-10 md:h-12 w-auto object-contain transition-opacity"
               />
