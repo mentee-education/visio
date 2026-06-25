@@ -17,7 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/programs" component={Programs} />
-      <Route path="/archive" component={StoryArchive} />
+      <Route path="/watch" component={StoryArchive} />
       <Route path="/get-involved" component={GetInvolved} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />

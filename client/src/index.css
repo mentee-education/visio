@@ -6,9 +6,9 @@
  * Principle: Maximum restraint. Two-tone base + one accent.
  *
  * Color Philosophy:
- *   Off-White (#FAFAF7)  — background, breath, space
- *   Charcoal  (#2A2522)  — text, depth, warmth
- *   Terracotta (#C1440E) — the ONE accent color
+ *   Warm White (#FAFAF8) — background, breath, space
+ *   Deep Slate (#1A2040) — text, depth, authority
+ *   Deep Teal  (#1A7A7A) — the ONE accent color
  *
  * Typography:
  *   Display: Playfair Display — editorial authority
@@ -59,51 +59,51 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* Visio Brand — Restrained Palette */
-  --color-visio-offwhite: oklch(0.975 0.005 90);
-  --color-visio-charcoal: oklch(0.24 0.015 60);
-  --color-visio-terracotta: oklch(0.52 0.18 30);
-  --color-visio-light: oklch(0.94 0.008 90);
-  --color-visio-mid: oklch(0.55 0.01 60);
+  --color-visio-offwhite: oklch(0.98 0.005 85);
+  --color-visio-charcoal: oklch(0.20 0.025 230);
+  --color-visio-terracotta: oklch(0.48 0.10 195);
+  --color-visio-light: oklch(0.95 0.005 85);
+  --color-visio-mid: oklch(0.55 0.015 230);
 }
 
 :root {
   /* Visio — Restrained Palette */
-  --primary: oklch(0.52 0.18 30);              /* Terracotta — the ONE accent */
-  --primary-foreground: oklch(0.98 0.003 90);  /* Off-white */
-  --secondary: oklch(0.24 0.015 60);           /* Charcoal */
-  --secondary-foreground: oklch(0.98 0.003 90);
-  --accent: oklch(0.52 0.18 30);               /* Same terracotta — one accent only */
-  --accent-foreground: oklch(0.98 0.003 90);
+  --primary: oklch(0.42 0.12 195);              /* Deep Teal — the ONE accent */
+  --primary-foreground: oklch(0.98 0.005 85);  /* Warm white */
+  --secondary: oklch(0.25 0.04 210);           /* Teal-dark */
+  --secondary-foreground: oklch(0.98 0.005 85);
+  --accent: oklch(0.48 0.10 195);               /* Same terracotta — one accent only */
+  --accent-foreground: oklch(0.98 0.005 85);
 
-  --background: oklch(0.975 0.005 90);         /* Off-white */
-  --foreground: oklch(0.24 0.015 60);          /* Charcoal */
-  --card: oklch(0.98 0.003 90);
-  --card-foreground: oklch(0.24 0.015 60);
-  --popover: oklch(0.98 0.003 90);
-  --popover-foreground: oklch(0.24 0.015 60);
-  --muted: oklch(0.94 0.008 90);
-  --muted-foreground: oklch(0.50 0.01 60);
+  --background: oklch(0.98 0.005 85);         /* Off-white */
+  --foreground: oklch(0.20 0.025 230);          /* Charcoal */
+  --card: oklch(0.98 0.005 85);
+  --card-foreground: oklch(0.20 0.025 230);
+  --popover: oklch(0.98 0.005 85);
+  --popover-foreground: oklch(0.20 0.025 230);
+  --muted: oklch(0.95 0.005 85);
+  --muted-foreground: oklch(0.50 0.015 230);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.90 0.008 80);
-  --input: oklch(0.92 0.006 80);
-  --ring: oklch(0.52 0.18 30);
+  --border: oklch(0.91 0.005 230);
+  --input: oklch(0.92 0.005 230);
+  --ring: oklch(0.48 0.10 195);
   --radius: 0.125rem;
 
-  --sidebar: oklch(0.98 0.003 90);
-  --sidebar-foreground: oklch(0.24 0.015 60);
-  --sidebar-primary: oklch(0.52 0.18 30);
-  --sidebar-primary-foreground: oklch(0.98 0.003 90);
-  --sidebar-accent: oklch(0.94 0.008 90);
-  --sidebar-accent-foreground: oklch(0.24 0.015 60);
-  --sidebar-border: oklch(0.90 0.008 80);
-  --sidebar-ring: oklch(0.52 0.18 30);
+  --sidebar: oklch(0.98 0.005 85);
+  --sidebar-foreground: oklch(0.20 0.025 230);
+  --sidebar-primary: oklch(0.48 0.10 195);
+  --sidebar-primary-foreground: oklch(0.98 0.005 85);
+  --sidebar-accent: oklch(0.95 0.005 85);
+  --sidebar-accent-foreground: oklch(0.20 0.025 230);
+  --sidebar-border: oklch(0.91 0.005 230);
+  --sidebar-ring: oklch(0.48 0.10 195);
 
-  --chart-1: oklch(0.52 0.18 30);
-  --chart-2: oklch(0.24 0.015 60);
-  --chart-3: oklch(0.55 0.01 60);
-  --chart-4: oklch(0.42 0.15 30);
-  --chart-5: oklch(0.65 0.12 30);
+  --chart-1: oklch(0.48 0.10 195);
+  --chart-2: oklch(0.20 0.025 230);
+  --chart-3: oklch(0.55 0.015 230);
+  --chart-4: oklch(0.40 0.08 195);
+  --chart-5: oklch(0.60 0.08 195);
 }
 
 @layer base {
@@ -183,18 +183,18 @@
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.7rem;
     font-weight: 500;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: oklch(0.52 0.18 30);
+    color: oklch(0.48 0.12 195);
   }
 
   /* Accent rule line */
   .rule-terracotta {
     display: block;
-    width: 2.5rem;
-    height: 2px;
-    background-color: oklch(0.52 0.18 30);
-    margin-bottom: 1.5rem;
+    width: 3rem;
+    height: 3px;
+    background: linear-gradient(90deg, oklch(0.48 0.12 195), oklch(0.48 0.12 195 / 0.2));
+    margin-bottom: 2rem;
   }
 
   /* Hover lift effect */
@@ -203,7 +203,7 @@
   }
   .hover-lift:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 32px oklch(0.24 0.015 60 / 0.08);
+    box-shadow: 0 12px 32px oklch(0.20 0.025 230 / 0.08);
   }
 }
 
@@ -217,12 +217,12 @@ html {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: oklch(0.94 0.008 90);
+  background: oklch(0.95 0.005 85);
 }
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.52 0.18 30 / 0.4);
+  background: oklch(0.48 0.12 195 / 0.4);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.52 0.18 30 / 0.7);
+  background: oklch(0.48 0.12 195 / 0.7);
 }

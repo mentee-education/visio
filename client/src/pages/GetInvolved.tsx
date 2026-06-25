@@ -44,10 +44,10 @@ const volunteerRoles = [
     desc: "Help connect Visio with community organizations, nonprofits, and potential applicants. Ideal for people with strong networks in underrepresented communities.",
   },
   {
-    title: "Grant Review Panelist",
+    title: "Project Review Panelist",
     commitment: "10 hrs/cycle",
     skills: "Community knowledge, media literacy",
-    desc: "Join our grant review committee to evaluate applications. We especially welcome community members from underrepresented backgrounds and nonprofit leaders.",
+    desc: "Join our review committee to evaluate project applications. We especially welcome community members from underrepresented backgrounds and nonprofit leaders.",
   },
   {
     title: "Event Support",
@@ -182,7 +182,7 @@ export default function GetInvolved() {
   };
 
   return (
-    <div className="min-h-screen bg-[oklch(0.975_0.005_90)]">
+    <div className="min-h-screen bg-[oklch(0.98_0.005_85)]">
       <Navbar />
 
       {/* Header */}
@@ -190,15 +190,15 @@ export default function GetInvolved() {
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"
         style={{ backgroundImage: `url(${HERO_IMG})`, backgroundSize: "cover", backgroundPosition: "center 30%" }}
       >
-        <div className="absolute inset-0 bg-[oklch(0.20_0.01_60/0.85)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.15_0.03_210/0.95)] via-[oklch(0.20_0.03_210/0.85)] to-[oklch(0.25_0.03_210/0.65)]" />
         <div className="relative z-10 container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="section-label text-[oklch(0.65_0.1_35)] mb-4 block">Get Involved</span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white max-w-3xl leading-tight mb-6">
+            <span className="section-label text-[oklch(0.65_0.12_195)] mb-4 block">Get Involved</span>
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-white max-w-3xl leading-tight mb-6" style={{ textWrap: "balance" }}>
               Help us amplify more voices.
             </h1>
             <p className="font-body text-lg text-white/70 max-w-2xl">
@@ -209,21 +209,22 @@ export default function GetInvolved() {
       </section>
 
       {/* Ways to Get Involved */}
-      <section className="py-16 bg-[oklch(0.24_0.015_60)]">
+      <section className="py-16 bg-[oklch(0.95_0.005_85)]">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[oklch(0.90_0.008_80)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: Heart, title: "Support", desc: "Express your interest in supporting Visio financially. We'll follow up to discuss how your contribution can make an impact.", anchor: "#support" },
               { icon: Users, title: "Volunteer", desc: "Share your skills as a facilitator, reviewer, or event supporter. Open to filmmakers, educators, and community members.", anchor: "#volunteer" },
               { icon: Briefcase, title: "Partner", desc: "Organizations can partner with Visio to co-fund programs, sponsor workshops, or support community productions.", anchor: "#partner" },
             ].map((item, i) => (
               <FadeUp key={item.title} delay={i * 0.1}>
-                <a href={item.anchor} className="block bg-[oklch(0.24_0.015_60)] p-8 text-center hover:bg-[oklch(0.32_0.05_55)] transition-colors group">
-                  <div className="w-14 h-14 bg-[oklch(0.52_0.18_30/0.15)] flex items-center justify-center mx-auto mb-5 group-hover:bg-[oklch(0.52_0.18_30/0.25)] transition-colors">
-                    <item.icon size={24} className="text-[oklch(0.52_0.18_30)]" />
+                <a href={item.anchor} className="block bg-white border border-[oklch(0.91_0.005_230)] p-8 text-center hover:border-[oklch(0.42_0.12_195/0.4)] transition-all group h-full relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-0 group-hover:w-full h-[3px] bg-[oklch(0.42_0.12_195)] transition-all duration-500" />
+                  <div className="w-14 h-14 bg-[oklch(0.42_0.12_195/0.1)] flex items-center justify-center mx-auto mb-5 group-hover:bg-[oklch(0.42_0.12_195/0.2)] transition-colors">
+                    <item.icon size={24} className="text-[oklch(0.42_0.12_195)]" />
                   </div>
-                  <h3 className="font-display text-2xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="font-body text-sm text-[oklch(0.50_0.01_60)]">{item.desc}</p>
+                  <h3 className="font-display text-2xl font-bold text-[oklch(0.25_0.04_210)] mb-3 group-hover:text-[oklch(0.35_0.10_195)] transition-colors">{item.title}</h3>
+                  <p className="font-body text-sm text-[oklch(0.50_0.015_230)]">{item.desc}</p>
                 </a>
               </FadeUp>
             ))}
@@ -240,13 +241,13 @@ export default function GetInvolved() {
             <FadeUp>
               <span className="section-label mb-4 block">Support Our Work</span>
               <div className="rule-terracotta" />
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-[oklch(0.24_0.015_60)] mb-8">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-[oklch(0.25_0.04_210)] mb-8">
                 Every contribution tells a story.
               </h2>
-              <p className="font-body text-lg text-[oklch(0.40_0.01_60)] leading-relaxed mb-6">
+              <p className="font-body text-lg text-[oklch(0.40_0.015_230)] leading-relaxed mb-6">
                 Visio is building the infrastructure for community storytelling across Canada. Your financial support helps fund grants, workshops, and production services for organizations that couldn't otherwise afford them.
               </p>
-              <p className="font-body text-[oklch(0.50_0.01_60)] leading-relaxed mb-8">
+              <p className="font-body text-[oklch(0.50_0.015_230)] leading-relaxed mb-8">
                 Fill out the form and we'll reach out to discuss how your contribution can make a direct impact in communities across the country.
               </p>
 
@@ -257,11 +258,11 @@ export default function GetInvolved() {
                   { label: "Support a community grant", desc: "Help a nonprofit produce their own documentary film" },
                   { label: "Sustain our operations", desc: "Keep the lab running — staff, space, and infrastructure" },
                 ].map((item) => (
-                  <div key={item.label} className="flex gap-4 p-4 bg-[oklch(0.94_0.008_90)]">
-                    <div className="w-1 flex-shrink-0 bg-[oklch(0.52_0.18_30)]" />
+                  <div key={item.label} className="flex gap-4 p-4 bg-[oklch(0.95_0.005_85)]">
+                    <div className="w-1 flex-shrink-0 bg-[oklch(0.42_0.12_195)]" />
                     <div>
-                      <div className="font-body text-sm font-medium text-[oklch(0.24_0.015_60)] mb-0.5">{item.label}</div>
-                      <div className="font-body text-sm text-[oklch(0.50_0.01_60)]">{item.desc}</div>
+                      <div className="font-body text-sm font-medium text-[oklch(0.25_0.04_210)] mb-0.5">{item.label}</div>
+                      <div className="font-body text-sm text-[oklch(0.50_0.015_230)]">{item.desc}</div>
                     </div>
                   </div>
                 ))}
@@ -271,76 +272,76 @@ export default function GetInvolved() {
             {/* Right: Interest Form */}
             <FadeUp delay={0.15}>
               {supportSuccess ? (
-                <div className="bg-[oklch(0.52_0.18_30/0.08)] border border-[oklch(0.52_0.18_30/0.3)] p-10 text-center">
-                  <CheckCircle size={44} className="text-[oklch(0.24_0.015_60)] mx-auto mb-5" />
-                  <h3 className="font-display text-2xl font-bold text-[oklch(0.24_0.015_60)] mb-3">
+                <div className="bg-[oklch(0.42_0.12_195/0.08)] border border-[oklch(0.42_0.12_195/0.3)] p-10 text-center">
+                  <CheckCircle size={44} className="text-[oklch(0.25_0.04_210)] mx-auto mb-5" />
+                  <h3 className="font-display text-2xl font-bold text-[oklch(0.25_0.04_210)] mb-3">
                     Thank you, {supportData.name}.
                   </h3>
-                  <p className="font-body text-[oklch(0.40_0.01_60)] mb-6">
+                  <p className="font-body text-[oklch(0.40_0.015_230)] mb-6">
                     We've received your expression of interest and will follow up at <strong>{supportData.email}</strong> within 24–48 hours to discuss next steps.
                   </p>
                   <button
                     onClick={() => { setSupportSuccess(false); setSupportData({ name: "", email: "", org: "", type: "", message: "" }); }}
-                    className="font-body text-sm text-[oklch(0.52_0.18_30)] underline"
+                    className="font-body text-sm text-[oklch(0.42_0.12_195)] underline"
                   >
                     Submit another inquiry
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSupportSubmit} className="bg-[oklch(0.975_0.005_90)] border border-[oklch(0.90_0.008_80)] p-8 space-y-6">
+                <form onSubmit={handleSupportSubmit} className="bg-[oklch(0.98_0.005_85)] border border-[oklch(0.91_0.005_230)] p-8 space-y-6">
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-[oklch(0.24_0.015_60)] mb-1">Express Your Interest</h3>
-                    <p className="font-body text-sm text-[oklch(0.50_0.01_60)]">Tell us a bit about yourself and how you'd like to support Visio.</p>
+                    <h3 className="font-display text-2xl font-bold text-[oklch(0.25_0.04_210)] mb-1">Express Your Interest</h3>
+                    <p className="font-body text-sm text-[oklch(0.50_0.015_230)]">Tell us a bit about yourself and how you'd like to support Visio.</p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                        Full Name <span className="text-[oklch(0.52_0.18_30)]">*</span>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                        Full Name <span className="text-[oklch(0.42_0.12_195)]">*</span>
                       </label>
                       <input
                         type="text"
                         value={supportData.name}
                         onChange={(e) => setSupportData({ ...supportData, name: e.target.value })}
                         placeholder="Your full name"
-                        className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                        className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                       />
                     </div>
                     <div>
-                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                        Email <span className="text-[oklch(0.52_0.18_30)]">*</span>
+                      <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                        Email <span className="text-[oklch(0.42_0.12_195)]">*</span>
                       </label>
                       <input
                         type="email"
                         value={supportData.email}
                         onChange={(e) => setSupportData({ ...supportData, email: e.target.value })}
                         placeholder="your@email.com"
-                        className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                        className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                      Organization <span className="font-normal text-[oklch(0.50_0.01_60)]">(optional)</span>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                      Organization <span className="font-normal text-[oklch(0.50_0.015_230)]">(optional)</span>
                     </label>
                     <input
                       type="text"
                       value={supportData.org}
                       onChange={(e) => setSupportData({ ...supportData, org: e.target.value })}
                       placeholder="Company, foundation, or organization name"
-                      className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                      className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                     />
                   </div>
 
                   <div>
-                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                      How would you like to support? <span className="text-[oklch(0.52_0.18_30)]">*</span>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                      How would you like to support? <span className="text-[oklch(0.42_0.12_195)]">*</span>
                     </label>
                     <select
                       value={supportData.type}
                       onChange={(e) => setSupportData({ ...supportData, type: e.target.value })}
-                      className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                      className="w-full border border-[oklch(0.91_0.005_230)] bg-[oklch(0.98_0.005_85)] px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                     >
                       <option value="">Select an option</option>
                       <option value="Individual donation">Individual donation</option>
@@ -353,29 +354,29 @@ export default function GetInvolved() {
                   </div>
 
                   <div>
-                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                      Anything else you'd like us to know? <span className="font-normal text-[oklch(0.50_0.01_60)]">(optional)</span>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                      Anything else you'd like us to know? <span className="font-normal text-[oklch(0.50_0.015_230)]">(optional)</span>
                     </label>
                     <textarea
                       value={supportData.message}
                       onChange={(e) => setSupportData({ ...supportData, message: e.target.value })}
                       placeholder="Tell us more about your interest, any specific programs you'd like to support, or questions you have."
                       rows={4}
-                      className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)] resize-none"
+                      className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)] resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={supportSending}
-                    className="w-full bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium text-base hover:bg-[oklch(0.46_0.18_30)] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full bg-[oklch(0.42_0.12_195)] text-white py-4 font-body font-medium text-base hover:bg-[oklch(0.38_0.12_195)] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {supportSending ? "Sending..." : "Send My Expression of Interest"} <Mail size={15} />
                   </button>
 
-                  <p className="font-body text-xs text-[oklch(0.50_0.01_60)] text-center">
+                  <p className="font-body text-xs text-[oklch(0.50_0.015_230)] text-center">
                     Prefer to reach out directly?{" "}
-                    <Link href="/contact" className="text-[oklch(0.52_0.18_30)] hover:underline">Visit our contact page</Link>
+                    <Link href="/contact" className="text-[oklch(0.42_0.12_195)] hover:underline">Visit our contact page</Link>
                   </p>
                 </form>
               )}
@@ -385,16 +386,16 @@ export default function GetInvolved() {
       </section>
 
       {/* Volunteer Section */}
-      <section className="py-20 md:py-28 bg-[oklch(0.94_0.008_90)]" id="volunteer">
+      <section className="py-20 md:py-28 bg-[oklch(0.95_0.005_85)]" id="volunteer">
         <div className="container">
           <FadeUp>
             <span className="section-label mb-4 block">Volunteer</span>
             <div className="rule-terracotta" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16">
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-[oklch(0.24_0.015_60)]">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-[oklch(0.25_0.04_210)]">
                 Share your skills with community.
               </h2>
-              <p className="font-body text-lg text-[oklch(0.40_0.01_60)] leading-relaxed">
+              <p className="font-body text-lg text-[oklch(0.40_0.015_230)] leading-relaxed">
                 Visio runs on the generosity of skilled volunteers. Whether you're a filmmaker, editor, event coordinator, or community connector — there's a role for you.
               </p>
             </div>
@@ -403,16 +404,16 @@ export default function GetInvolved() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {volunteerRoles.map((role, i) => (
               <FadeUp key={role.title} delay={i * 0.1}>
-                <div className="bg-[oklch(0.975_0.005_90)] p-7 border border-[oklch(0.90_0.008_80)] h-full">
+                <div className="bg-[oklch(0.98_0.005_85)] p-7 border border-[oklch(0.91_0.005_230)] h-full">
                   <div className="flex items-start justify-between mb-4">
-                    <h3 className="font-display text-xl font-bold text-[oklch(0.24_0.015_60)]">{role.title}</h3>
-                    <span className="font-body text-xs text-[oklch(0.52_0.18_30)] bg-[oklch(0.52_0.18_30/0.1)] px-2 py-1 flex-shrink-0 ml-4">
+                    <h3 className="font-display text-xl font-bold text-[oklch(0.25_0.04_210)]">{role.title}</h3>
+                    <span className="font-body text-xs text-[oklch(0.42_0.12_195)] bg-[oklch(0.42_0.12_195/0.1)] px-2 py-1 flex-shrink-0 ml-4">
                       {role.commitment}
                     </span>
                   </div>
-                  <p className="font-body text-sm text-[oklch(0.50_0.01_60)] leading-relaxed mb-4">{role.desc}</p>
-                  <p className="font-body text-xs text-[oklch(0.50_0.01_60)]">
-                    <span className="text-[oklch(0.52_0.18_30)]">Skills:</span> {role.skills}
+                  <p className="font-body text-sm text-[oklch(0.50_0.015_230)] leading-relaxed mb-4">{role.desc}</p>
+                  <p className="font-body text-xs text-[oklch(0.50_0.015_230)]">
+                    <span className="text-[oklch(0.42_0.12_195)]">Skills:</span> {role.skills}
                   </p>
                 </div>
               </FadeUp>
@@ -425,7 +426,7 @@ export default function GetInvolved() {
               <div className="text-center">
                 <button
                   onClick={() => setShowVolunteerForm(true)}
-                  className="inline-flex items-center gap-2 bg-[oklch(0.52_0.18_30)] text-white px-8 py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-all hover:gap-3"
+                  className="inline-flex items-center gap-2 bg-[oklch(0.42_0.12_195)] text-white px-8 py-4 font-body font-medium hover:bg-[oklch(0.38_0.12_195)] transition-all hover:gap-3"
                 >
                   Apply to Volunteer <ArrowRight size={16} />
                 </button>
@@ -433,15 +434,15 @@ export default function GetInvolved() {
             )}
 
             {volunteerSuccess && (
-              <div className="bg-[oklch(0.52_0.18_30/0.08)] border border-[oklch(0.52_0.18_30/0.3)] p-10 text-center max-w-xl mx-auto">
-                <CheckCircle size={40} className="text-[oklch(0.24_0.015_60)] mx-auto mb-4" />
-                <h3 className="font-display text-2xl font-bold text-[oklch(0.24_0.015_60)] mb-3">Application received.</h3>
-                <p className="font-body text-[oklch(0.40_0.01_60)] mb-6">
+              <div className="bg-[oklch(0.42_0.12_195/0.08)] border border-[oklch(0.42_0.12_195/0.3)] p-10 text-center max-w-xl mx-auto">
+                <CheckCircle size={40} className="text-[oklch(0.25_0.04_210)] mx-auto mb-4" />
+                <h3 className="font-display text-2xl font-bold text-[oklch(0.25_0.04_210)] mb-3">Application received.</h3>
+                <p className="font-body text-[oklch(0.40_0.015_230)] mb-6">
                   Thank you, <strong>{volunteerData.name}</strong>. We'll review your application and reach out to <strong>{volunteerData.email}</strong> within 24–48 hours.
                 </p>
                 <button
                   onClick={() => { setVolunteerSuccess(false); setShowVolunteerForm(false); setVolunteerData({ name: "", email: "", phone: "", role: "", experience: "", availability: "", community: "" }); }}
-                  className="font-body text-sm text-[oklch(0.52_0.18_30)] underline"
+                  className="font-body text-sm text-[oklch(0.42_0.12_195)] underline"
                 >
                   Submit another application
                 </button>
@@ -449,67 +450,67 @@ export default function GetInvolved() {
             )}
 
             {showVolunteerForm && !volunteerSuccess && (
-              <form onSubmit={handleVolunteerSubmit} className="bg-[oklch(0.975_0.005_90)] border border-[oklch(0.90_0.008_80)] p-8 space-y-6 max-w-2xl mx-auto">
-                <h3 className="font-display text-2xl font-bold text-[oklch(0.24_0.015_60)]">Volunteer Application</h3>
+              <form onSubmit={handleVolunteerSubmit} className="bg-[oklch(0.98_0.005_85)] border border-[oklch(0.91_0.005_230)] p-8 space-y-6 max-w-2xl mx-auto">
+                <h3 className="font-display text-2xl font-bold text-[oklch(0.25_0.04_210)]">Volunteer Application</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                      Full Name <span className="text-[oklch(0.52_0.18_30)]">*</span>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                      Full Name <span className="text-[oklch(0.42_0.12_195)]">*</span>
                     </label>
                     <input
                       type="text"
                       value={volunteerData.name}
                       onChange={(e) => setVolunteerData({ ...volunteerData, name: e.target.value })}
                       placeholder="Your full name"
-                      className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                      className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                     />
                   </div>
                   <div>
-                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                      Email <span className="text-[oklch(0.52_0.18_30)]">*</span>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                      Email <span className="text-[oklch(0.42_0.12_195)]">*</span>
                     </label>
                     <input
                       type="email"
                       value={volunteerData.email}
                       onChange={(e) => setVolunteerData({ ...volunteerData, email: e.target.value })}
                       placeholder="your@email.com"
-                      className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                      className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">Phone</label>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">Phone</label>
                     <input
                       type="tel"
                       value={volunteerData.phone}
                       onChange={(e) => setVolunteerData({ ...volunteerData, phone: e.target.value })}
                       placeholder="Optional"
-                      className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                      className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                     />
                   </div>
                   <div>
-                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">Community / Nation</label>
+                    <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">Community / Nation</label>
                     <input
                       type="text"
                       value={volunteerData.community}
                       onChange={(e) => setVolunteerData({ ...volunteerData, community: e.target.value })}
                       placeholder="If applicable"
-                      className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                      className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                    Role of Interest <span className="text-[oklch(0.52_0.18_30)]">*</span>
+                  <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                    Role of Interest <span className="text-[oklch(0.42_0.12_195)]">*</span>
                   </label>
                   <select
                     value={volunteerData.role}
                     onChange={(e) => setVolunteerData({ ...volunteerData, role: e.target.value })}
-                    className="w-full border border-[oklch(0.90_0.008_80)] bg-[oklch(0.975_0.005_90)] px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                    className="w-full border border-[oklch(0.91_0.005_230)] bg-[oklch(0.98_0.005_85)] px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                   >
                     <option value="">Select a role</option>
                     {volunteerRoles.map((r) => (
@@ -520,26 +521,26 @@ export default function GetInvolved() {
                 </div>
 
                 <div>
-                  <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">
-                    Relevant Experience <span className="text-[oklch(0.52_0.18_30)]">*</span>
+                  <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">
+                    Relevant Experience <span className="text-[oklch(0.42_0.12_195)]">*</span>
                   </label>
                   <textarea
                     value={volunteerData.experience}
                     onChange={(e) => setVolunteerData({ ...volunteerData, experience: e.target.value })}
                     placeholder="Briefly describe your relevant skills and experience (2–4 sentences)"
                     rows={4}
-                    className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)] resize-none"
+                    className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)] resize-none"
                   />
                 </div>
 
                 <div>
-                  <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.01_60)] mb-2 block">Availability</label>
+                  <label className="font-body text-xs uppercase tracking-wider text-[oklch(0.50_0.015_230)] mb-2 block">Availability</label>
                   <input
                     type="text"
                     value={volunteerData.availability}
                     onChange={(e) => setVolunteerData({ ...volunteerData, availability: e.target.value })}
                     placeholder="e.g. Weekends, evenings, flexible"
-                    className="w-full border border-[oklch(0.90_0.008_80)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.24_0.015_60)] placeholder:text-[oklch(0.50_0.01_60)] focus:outline-none focus:border-[oklch(0.52_0.18_30)]"
+                    className="w-full border border-[oklch(0.91_0.005_230)] bg-transparent px-4 py-3 font-body text-sm text-[oklch(0.25_0.04_210)] placeholder:text-[oklch(0.50_0.015_230)] focus:outline-none focus:border-[oklch(0.42_0.12_195)]"
                   />
                 </div>
 
@@ -547,14 +548,14 @@ export default function GetInvolved() {
                   <button
                     type="submit"
                     disabled={volunteerSending}
-                    className="flex-1 bg-[oklch(0.52_0.18_30)] text-white py-4 font-body font-medium hover:bg-[oklch(0.46_0.18_30)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="flex-1 bg-[oklch(0.42_0.12_195)] text-white py-4 font-body font-medium hover:bg-[oklch(0.38_0.12_195)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {volunteerSending ? "Sending..." : "Submit Application"}
                   </button>
                   <button
                     type="button"
                     onClick={() => setShowVolunteerForm(false)}
-                    className="px-6 border border-[oklch(0.90_0.008_80)] font-body text-sm text-[oklch(0.50_0.01_60)] hover:border-[oklch(0.52_0.18_30)] transition-colors"
+                    className="px-6 border border-[oklch(0.91_0.005_230)] font-body text-sm text-[oklch(0.50_0.015_230)] hover:border-[oklch(0.42_0.12_195)] transition-colors"
                   >
                     Cancel
                   </button>
@@ -566,11 +567,11 @@ export default function GetInvolved() {
       </section>
 
       {/* Partnership Section */}
-      <section className="py-20 md:py-28 bg-[oklch(0.24_0.015_60)]" id="partner">
+      <section className="py-20 md:py-28 bg-[oklch(0.38_0.10_200)]" id="partner">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeUp>
-              <span className="section-label text-[oklch(0.65_0.08_140)] mb-4 block">Partnership</span>
+              <span className="section-label text-[oklch(0.65_0.12_195)] mb-4 block">Partnership</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
                 Partner with Visio.
               </h2>
@@ -585,30 +586,40 @@ export default function GetInvolved() {
                   "Annual impact reporting and recognition",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 font-body text-white/80 text-sm">
-                    <CheckCircle size={15} className="text-[oklch(0.75_0.12_35)] mt-0.5 flex-shrink-0" />
+                    <CheckCircle size={15} className="text-[oklch(0.65_0.12_195)] mt-0.5 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <div className="bg-[oklch(0.28_0.09_140)] p-8">
-                <h3 className="font-display text-2xl font-bold text-white mb-4">Discuss a partnership</h3>
-                <p className="font-body text-white/70 text-sm mb-6">
+              <div className="bg-white p-8">
+                <h3 className="font-display text-2xl font-bold text-[oklch(0.25_0.04_210)] mb-4">Discuss a partnership</h3>
+                <p className="font-body text-[oklch(0.50_0.015_230)] text-sm mb-6">
                   We work with partners of all sizes. Contact us to discuss how we can collaborate to amplify community voices together.
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-[oklch(0.52_0.18_30)] text-white px-7 py-3.5 font-body font-medium text-sm hover:bg-[oklch(0.46_0.18_30)] transition-all hover:gap-3"
+                  className="inline-flex items-center gap-2 bg-[oklch(0.42_0.12_195)] text-white px-7 py-3.5 font-body font-medium text-sm hover:bg-[oklch(0.38_0.12_195)] transition-all hover:gap-3"
                 >
                   Discuss a Partnership <ArrowRight size={15} />
                 </Link>
-                <p className="font-body text-xs text-white/40 mt-4">
-                  Or reach out through our <Link href="/contact" className="text-white/60 hover:text-white transition-colors">contact page</Link>
+                <p className="font-body text-xs text-[oklch(0.50_0.015_230)] mt-4">
+                  Or reach out through our <Link href="/contact" className="text-[oklch(0.42_0.12_195)] hover:underline">contact page</Link>
                 </p>
               </div>
             </FadeUp>
           </div>
+
+          {/* Land Acknowledgment — within partnership section */}
+          <FadeUp delay={0.3}>
+            <div className="mt-16 bg-white/10 backdrop-blur-sm p-8 md:p-10">
+              <span className="font-body text-[10px] uppercase tracking-[0.2em] text-[oklch(0.70_0.10_195)] mb-3 block">Land Acknowledgment</span>
+              <p className="font-body text-sm text-white/85 leading-relaxed">
+                Visio operates on the unceded ancestral territories of the xʷməθkʷəy̓əm (Musqueam), Sḵwx̱wú7mesh (Squamish), and Sel̓íl̓witulh (Tsleil-Waututh) Nations. We are grateful to live and work on this land, and we are committed to supporting Indigenous sovereignty and self-determination in all that we do.
+              </p>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
