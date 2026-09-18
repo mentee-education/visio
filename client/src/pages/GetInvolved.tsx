@@ -12,7 +12,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/2gJkziC3sMaXKrksstrnZJ/visio-hero-diverse-7kWXDh4ueTb8gGaiSbrnhL.webp";
+const HERO_IMG = "https://pub-c0977027b255481b98eb5fd6fe9e5c6d.r2.dev/visio-hero.webp";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);

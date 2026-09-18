@@ -10,9 +10,9 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const WORKSHOP_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/2gJkziC3sMaXKrksstrnZJ/visio-workshop-Xp6S9DdK25738NN6rSrTSA.webp";
+const WORKSHOP_IMG = "https://pub-c0977027b255481b98eb5fd6fe9e5c6d.r2.dev/visio-workshop.webp";
 const COMMUNITY_IMG = "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80";
-const EARTH_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/2gJkziC3sMaXKrksstrnZJ/visio-about-bg-FGzviiqexgDLZDnCfgih6e.webp";
+const EARTH_BG = "https://pub-c0977027b255481b98eb5fd6fe9e5c6d.r2.dev/visio-hero.webp";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
