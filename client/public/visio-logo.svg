@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <!-- Visio Logo — Terracotta lens mark + wordmark -->
+  <!-- Lens mark: stylized camera lens / eye -->
+  <circle cx="30" cy="30" r="22" fill="#C2542D"/>
+  <circle cx="30" cy="30" r="12" fill="none" stroke="white" stroke-width="2.5"/>
+  <circle cx="30" cy="30" r="5" fill="white" opacity="0.9"/>
+  <!-- Wordmark -->
+  <text x="64" y="40" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="36" fill="#2D2A26" letter-spacing="-0.5">Visio</text>
+</svg>
